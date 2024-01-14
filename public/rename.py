@@ -16,7 +16,7 @@ def rename_and_resize_images():
     jpg_files = [f for f in files if f.endswith('.jpg')]
     jpg_files.sort(key=lambda f: int(re.search(r'\d+', f).group()) if re.search(r'\d+', f) else 0)
     
-    mywidth = 500
+    mywidth = 1500
     next_image_number = 1
     json_data = []
 
