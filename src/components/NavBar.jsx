@@ -1,0 +1,53 @@
+import React, { Component } from 'react';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { NavLink as RRNavLink } from 'react-router-dom'; // React Router NavLink
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+
+export class NavBar extends Component {
+    constructor(props) {
+        super(props);
+
+        this.toggleNavbar = this.toggleNavbar.bind(this);
+        this.state = {
+            isOpen: false
+        };
+    }
+
+    toggleNavbar() {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+    }
+
+    render() {
+        return (
+            <div id="navigation">
+                <Navbar color="white" light expand="md" fixed="top" scrolling>
+                    <NavbarBrand href="/">
+                        <strong className="nav-brand-item">Perry ONG  | Portfolio</strong>
+                        {/* Logo can be included here */}
+                    </NavbarBrand>
+                    <NavbarToggler onClick={this.toggleNavbar} />
+                    <Collapse isOpen={this.state.isOpen} navbar>
+                        <Nav className="mr-auto" navbar>
+                            <NavItem>
+                                <NavLink exact to="/" activeClassName="active" tag={RRNavLink}>Home</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="https://perryongwq.github.io/Personal/" target="_blank" className='nav-link'>Portfolio</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink to="/projects" activeClassName="active" tag={RRNavLink}>Projects</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink to="/about" activeClassName="active" tag={RRNavLink}>About Me</NavLink>
+                            </NavItem>
+                        </Nav>
+                    </Collapse>
+                </Navbar>
+            </div>
+        );
+    }
+}
+
+

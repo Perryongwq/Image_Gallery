@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LightGallery from 'lightgallery/react';
 import linkedin from './Icon/linkedin.png';
 import arrow_down from './Icon/arrow-down.svg';
+import totoro from './Icon/totoro.gif';
 
 // import styles
 import 'lightgallery/css/lightgallery.css';
@@ -57,9 +58,10 @@ export function Gallery() {
                 <div className='header-content'>
                 <h1>Image Gallery</h1>
                 </div>
-
-
             </header>
+            <div >
+                <img src={totoro} alt='Walking Totoro' className='totoro'/>
+            </div>
                     <div className="App">
             <LightGallery
                 onInit={onInit}
@@ -94,7 +96,6 @@ export function Gallery() {
                     <img src={arrow_down} alt="Scroll to top" />
                 </button>
             )}
-            
 
     </div>
 

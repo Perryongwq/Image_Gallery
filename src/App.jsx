@@ -1,17 +1,24 @@
-import { Gallery } from "./Gallery"
-import "./styles.css"
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import {NavBar} from "./components/NavBar"; // Assuming NavBar is a default export
+import { Gallery } from "./Gallery";
+import  Slider  from "./components/Slider";
+
+
+
+import "./styles.css";
 
 function App() {
-  
-
   return (
-    <>
-    <Gallery />
-    </>
-  )
+    <Router>
+      <>
+        <NavBar />
+        <Slider/>
+        
+        <Gallery />
+      </>
+    </Router>
+  );
 }
 
-//TODO:Refactor the code to use the Gallery component in App.jsx
-//TODO:Implement a firebase to upload images to the galley
-//TODO: Add a music player to the gallery
-export default App
+export default App;
