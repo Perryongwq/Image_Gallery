@@ -54,7 +54,7 @@ export function Gallery() {
 
     return (
         <div>
-            <header>
+            <header style={{ paddingBottom: '50px'}}>
                 <div className='header-content'>
                 <h1>Image Gallery</h1>
                 </div>
