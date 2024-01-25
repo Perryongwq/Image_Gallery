@@ -88,6 +88,7 @@ footer {
     max-width: 10%; /* Reduce the size to 50% of its original */
     height: auto;
     background-color: #f4f4f4;
+    margin-top: 50px;
 }
 
 
