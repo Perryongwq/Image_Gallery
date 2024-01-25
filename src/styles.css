@@ -282,5 +282,56 @@ footer {
     background: white;
     width: 50%;
   }
+
+
+  .header-content button {
+    background-color: #fff; /* White background */
+    border: 2px solid #000; /* Black border */
+    color: #000; /* Black text */
+    padding: 10px 20px; /* Padding around text */
+    margin-right: 10px; /* Space between buttons */
+    font-size: 16px; /* Text size */
+    cursor: pointer; /* Cursor changes to pointer to indicate it's clickable */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .header-content button:hover {
+    background-color: #000; /* Black background on hover */
+    color: #fff; /* White text on hover */
+  }
+  
+  .header-content button:focus {
+    outline: none; /* Removes the outline to keep the design clean */
+  }
+
+
+  /* Styles for the scroll-to-top button */
+.scroll-to-top {
+  border: none; /* Remove the border */
+  background-color: transparent; /* Make the background transparent */
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+  padding: 10px; /* Add some padding around the icon */
+  border-radius: 50%; /* Optional: makes the button rounded */
+  position: fixed; /* Keep the button fixed */
+  right: 20px; /* Distance from the right */
+  bottom: 20px; /* Distance from the bottom */
+  width: 110px; /* Width of the button */
+  height: 110px; /* Height of the button */
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.scroll-to-top:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+/* Removes the focus outline to keep the design clean */
+.scroll-to-top:focus {
+  outline: none;
+}
+
+  
  
   

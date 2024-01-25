@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import LightGallery from 'lightgallery/react';
-import linkedin from './Icon/linkedin.png';
 import arrow_down from './Icon/arrow-down.svg';
 import totoro from './Icon/totoro.gif';
 
-// import styles
+
+// Import your styles and icons
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lg-thumbnail.css';
@@ -13,7 +13,7 @@ import 'lightgallery/css/lg-fullscreen.css';
 import 'lightgallery/css/lg-share.css';
 import 'lightgallery/css/lg-rotate.css';
 
-// import plugins
+// Import plugins
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
 import lgAutoplay from 'lightgallery/plugins/autoplay';
@@ -23,12 +23,15 @@ import lgRotate from 'lightgallery/plugins/rotate';
 
 export function Gallery() {
     const [images, setImages] = useState([]);
+    const [theme, setTheme] = useState('all');
     const [scrolling, setScrolling] = useState(false);
 
     useEffect(() => {
         fetch('/imagesList.json')
             .then(res => res.json())
-            .then(data => setImages(data))
+            .then(data => {
+                setImages(data);
+            })
             .catch(error => console.log('Error fetching image list:', error));
     }, []);
 
@@ -41,63 +44,56 @@ export function Gallery() {
                 setScrolling(false);
             }
         };
-        window.addEventListener('scroll', handleScroll);
 
+        window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-    
-    const onInit = () => {
-        console.log('lightGallery has been initialized');
-    };
+
+    const filteredImages = images.filter(image => theme === 'all' || image.theme === theme);
 
     return (
         <div>
-            <header style={{ paddingBottom: '50px'}}>
+            <header style={{ paddingBottom: '30px' }}>
                 <div className='header-content'>
-                <h1>Image Gallery</h1>
+                    <h1>Image Gallery</h1>
+                    {/* Theme selection buttons */}
+                    <div>
+                        <button onClick={() => setTheme('all')}>All</button>
+                        <button onClick={() => setTheme('bw')}>Black & White</button>
+                        <button onClick={() => setTheme('life')}>Life</button>
+                        <button onClick={() => setTheme('scenery')}>Scenery</button>
+                    </div>
+
                 </div>
-            </header>
+            </header> 
             <div >
                 <img src={totoro} alt='Walking Totoro' className='totoro'/>
             </div>
-                    <div className="App">
-            <LightGallery
-                onInit={onInit}
-                speed={500}
-                plugins={[lgThumbnail, lgZoom, lgAutoplay, lgFullscreen, lgShare, lgRotate]}
-
-            >
-                {images.map((image, index) => {
-                    return (
+            <div>
+                <LightGallery
+                    onInit={() => console.log('lightGallery has been initialized')}
+                    speed={500}
+                    plugins={[lgThumbnail, lgZoom, lgAutoplay, lgFullscreen, lgShare, lgRotate]}
+                    download={false}
+                >
+                    {filteredImages.map((image, index) => (
                         <a href={image.src} key={index}>
-                            <img alt={image.alt} src={image.src} />
+                            <img alt={image.alt} src={image.src} style={{ width: '100%', marginBottom: '10px' }} />
                         </a>
-                    );
-                })}
-            </LightGallery>
-        </div>
-        {/* <footer>
-                <div className="footer-content">
-                    Copy Right @2024 by Perry Ong
-                    <a href="https://www.linkedin.com/in/wen-qing-ong/" target="_blank" rel="noopener noreferrer">
-                        <img src={linkedin} className='linkedin-image' alt="LinkedIn" />
-                        <span>Perry Ong</span>
-                    </a>
-                </div>
-            </footer> */}
-
+                    ))}
+                </LightGallery>
+            </div>
+            
             {scrolling && (
                 <button
-                    className='fixed right-8 bottom-8 w-12 h-12' // Adjust styling as needed
+                    className='scroll-to-top' 
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 >
                     <img src={arrow_down} alt="Scroll to top" />
                 </button>
             )}
-
-    </div>
-
+        </div>
     );
 }

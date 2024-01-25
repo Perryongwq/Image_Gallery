@@ -32,14 +32,12 @@ export class NavBar extends Component {
                                 <NavLink exact to="/" activeClassName="active" tag={RRNavLink}>Home</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="https://perryongwq.github.io/Personal/" target="_blank" className='nav-link'>Portfolio</NavLink>
+                                <NavLink href="https://perryongwq.github.io/Personal/" target="_blank" className='nav-link'>About Me</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink to="/projects" activeClassName="active" tag={RRNavLink}>Projects</NavLink>
+                                <NavLink href="https://github.com/Perryongwq?tab=repositories" target="_blank" className='nav-link'>Projects (Github)</NavLink>
                             </NavItem>
-                            <NavItem>
-                                <NavLink to="/about" activeClassName="active" tag={RRNavLink}>About Me</NavLink>
-                            </NavItem>
+
                         </Nav>
 
                 </Navbar>
