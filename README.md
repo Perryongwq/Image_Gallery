@@ -1,8 +1,26 @@
-# React + Vite
+# React Photography Portfolio
+> My Photography Portfolio. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Demo](https://image-gallery-perry.vercel.app/)
+## Quick Start
+``` bash
+# Install dependencies
+npm install
 
-Currently, two official plugins are available:
+# Serve on localhost:3000
+npm start dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Build for production
+npm run build
+```
+### Author
+
+Perry Ong Wen Qing
+
+### Version
+
+1.0.0
+
+### License
+
+This project is licensed under the MIT License
