@@ -1,3 +1,6 @@
+#imgs
+./public/backup
+
 # Logs
 logs
 *.log

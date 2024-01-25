@@ -1,8 +1,7 @@
 import os
-from PIL import Image
-import json
-import shutil 
 import re
+import json
+from PIL import Image
 
 def resize_image(file_path, new_width):
     img = Image.open(file_path)
@@ -13,20 +12,12 @@ def resize_image(file_path, new_width):
 
 def rename_and_resize_images():
     current_directory = os.getcwd()
-    backup_directory = os.path.join(current_directory, "backup")  
-    
-    # Create backup directory if it doesn't exist
-    if not os.path.exists(backup_directory):
-        os.makedirs(backup_directory)
-    
     files = os.listdir(current_directory)
     jpg_files = [f for f in files if f.endswith('.jpg')]
-    
     jpg_files.sort(key=lambda f: int(re.search(r'\d+', f).group()) if re.search(r'\d+', f) else 0)
     
-    mywidth = 1300
-    # Simply start numbering from 1 for all files
-    next_image_number = 1
+    mywidth = 1500
+    next_image_number = int(input("Enter the next image number: "))
     json_data = []
 
     for file in jpg_files:
@@ -35,12 +26,13 @@ def rename_and_resize_images():
         resized_img = resize_image(file_path, mywidth)
         resized_img.save(os.path.join(current_directory, new_name))
         json_data.append({"src": f"/{new_name}", "alt": str(next_image_number)})
+        os.remove(file_path)
         next_image_number += 1
-        
-        # Move the original file to the backup directory after processing
-        shutil.move(file_path, os.path.join(backup_directory, file))
 
-    with open('imagesList.json', 'w') as json_file:
+
+    with open('imagesList_solo.json', 'w') as json_file:
         json.dump(json_data, json_file, indent=4)
 
-rename_and_resize_images()
+    
+
+rename_new_images = rename_and_resize_images()
