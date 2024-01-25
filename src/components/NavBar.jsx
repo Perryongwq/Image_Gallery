@@ -27,8 +27,7 @@ export class NavBar extends Component {
                         <strong className="nav-brand-item">Perry ONG  | Portfolio</strong>
                         {/* Logo can be included here */}
                     </NavbarBrand>
-                    <NavbarToggler onClick={this.toggleNavbar} />
-                    <Collapse isOpen={this.state.isOpen} navbar>
+
                         <Nav className="mr-auto" navbar>
                             <NavItem>
                                 <NavLink exact to="/" activeClassName="active" tag={RRNavLink}>Home</NavLink>
@@ -43,7 +42,7 @@ export class NavBar extends Component {
                                 <NavLink to="/about" activeClassName="active" tag={RRNavLink}>About Me</NavLink>
                             </NavItem>
                         </Nav>
-                    </Collapse>
+
                 </Navbar>
             </div>
         );
