@@ -118,13 +118,13 @@ footer {
     color: #333; /* Dark grey color */
     font-size: 2rem; /* Example font size */
     margin-left: 5px;
-    padding-left: 10px
+    padding-left: -10px
   }
   
   .nav-link {
     font-family: Arial, sans-serif; /* Ensure matching font with Brand */
     color: #333; /* Matching color */
-    font-size: 1rem; /* Slightly smaller font size than Brand */
+    font-size: rem; /* Slightly smaller font size than Brand */
     padding-left: 0; /* Adjust as needed */
   }
 
@@ -212,13 +212,16 @@ footer {
     left: 5rem;
     opacity: 0;
     width: 50%;
-    color: #fff;
+    color: black;
     padding: 3rem;
     background: rgba(0, 0, 0, 0.3);
     animation: slide-up 1s ease 0.5s;
     animation-delay: 1s;
     animation-fill-mode: forwards;
     visibility: hidden;
+    font: sans-serif;
+    font-size: x-large;
+    
   }
   
   @keyframes slide-up {
@@ -232,11 +235,6 @@ footer {
     }
   }
   
-  @media screen and (max-width: 600px) {
-    .content {
-      width: 80%;
-    }
-  }
   
   .content > * {
     color: #fff;
@@ -283,4 +281,5 @@ footer {
     background: white;
     width: 50%;
   }
-
+ 
+  

@@ -78,7 +78,7 @@ export function Gallery() {
                 })}
             </LightGallery>
         </div>
-        <footer>
+        {/* <footer>
                 <div className="footer-content">
                     Copy Right @2024 by Perry Ong
                     <a href="https://www.linkedin.com/in/wen-qing-ong/" target="_blank" rel="noopener noreferrer">
@@ -86,7 +86,7 @@ export function Gallery() {
                         <span>Perry Ong</span>
                     </a>
                 </div>
-            </footer>
+            </footer> */}
 
             {scrolling && (
                 <button

@@ -3,6 +3,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import {NavBar} from "./components/NavBar"; // Assuming NavBar is a default export
 import { Gallery } from "./Gallery";
 import  Slider  from "./components/Slider";
+import FooterPage from "./components/Footer"; // Adjust the path as necessary
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 
@@ -16,8 +18,10 @@ function App() {
         <Slider/>
         
         <Gallery />
+        <FooterPage />
       </>
     </Router>
+
   );
 }
 
