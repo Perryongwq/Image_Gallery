@@ -60,7 +60,7 @@ export function Gallery() {
                 </div>
             </header>
             <div >
-                <img src={totoro} alt='Walking Totoro' className='totoro'/>
+                <img src={totoro} alt='Walking Totoro' className='totoro'style={{ marginBottom: '20px' }}/>
             </div>
                     <div className="App">
             <LightGallery
