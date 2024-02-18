@@ -83,15 +83,20 @@ footer {
 }
 
 .totoro {
-    display: block;
-    margin: 0 auto; /* Center the image */
-    max-width: 10%; /* Reduce the size to 50% of its original */
-    height: auto;
-    background-color: #f4f4f4;
-    margin-top: 50px;
+  display: block;
+  margin: 0 auto; /* Center the image */
+  max-width: 10%; /* Reduce the size to 50% of its original */
+  height: auto;
+  background-color: #f4f4f4;
+  margin-top: 50px;
 }
 
-
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .totoro {
+    max-width: 50%; /* Adjust the size for smaller screens */
+  }
+}
 
 .navbar-nav {
     display: flex !important; 
