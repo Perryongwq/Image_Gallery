@@ -337,6 +337,17 @@ footer {
   outline: none;
 }
 
+
+.dynamic-header{
+  padding-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+  .dynamic-header {
+    padding-bottom: 20px;
+  }
+}
+
   
  
   
