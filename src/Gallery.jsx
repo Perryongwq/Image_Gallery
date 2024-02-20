@@ -55,7 +55,7 @@ export function Gallery() {
 
     return (
         <div>
-            <header style={{ paddingBottom: '30px' }} className="dynamic-header">
+            <header >
                 <div className='header-content'>
                     <h1>Image Gallery</h1>
                     {/* Theme selection buttons */}
